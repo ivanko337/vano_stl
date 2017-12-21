@@ -1,14 +1,17 @@
-// он у меня будет возвращать индекс начала вхождения
 template<class InputTupe1, class InputType2, class BinarePred>
-int search(InputTupe1 first, InputTupe1 last, InputType2 s_first, InputType2 s_last, BinarePred func)
+InputTupe1 search(InputTupe1 first, InputTupe1 last, InputType2 s_first, InputType2 s_last, BinarePred func)
 {
-	int schetchik = 0;
-	int answer = -1;
-	for(; first != last || s_first != s_last; ++first)
+	for(; ; ++first)
 	{
-		if(*first == *s_first)
+		InputType1 it = first;
+		for(InputType2 s_it = s_first; ; ++it, ++s_it)
 		{
-			
+			if(s_it == s_last)
+				return first;
+			if(it == last)
+				return last;
+			if(!(*it == *s_it))
+				break;
 		}
 	}
 }
