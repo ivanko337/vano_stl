@@ -1,0 +1,2 @@
+template<class InputIt1, class BinaryPred>
+InputIt1
